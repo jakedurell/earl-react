@@ -27,7 +27,7 @@
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "babel-cli": "^6.7.7",
-    "babel-core": "^6.7.4",
+    "babel-core": "^6.26.3",
     "babel-eslint": "^6.0.2",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-es2015-modules-umd": "^6.6.5",
@@ -48,14 +48,14 @@
     "eslint-plugin-babel": "^3.1.0",
     "eslint-plugin-react": "^5.1.1",
     "file-loader": "^0.8.5",
-    "gh-pages": "^1.1.0",
+    "gh-pages": "^1.2.0",
     "highlight.js": "^9.3.0",
     "history": "^3.0.0",
     "hjs-webpack": "^8.1.0",
     "jsdom": "^9.2.1",
     "marked": "^0.3.17",
     "mocha": "^2.4.5",
-    "nodemon": "^1.9.1",
+    "nodemon": "^1.18.3",
     "npm-font-open-sans": "0.0.3",
     "postcss-loader": "^0.9.1",
     "precss": "^1.4.0",
@@ -74,5 +74,9 @@
     "react": "~0.14.8 || ^15.0.0 || ^16.0.0",
     "react-dom": "~0.14.8 || ^15.0.0 || ^16.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "json-loader": "^0.5.7",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.21"
+  }
 }

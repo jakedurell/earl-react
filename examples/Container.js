@@ -22,14 +22,6 @@ class Container extends Component {
 
     return (
       <div className={styles.container}>
-        <GitHubForkRibbon
-          href="//github.com/fullstackreact/google-maps-react"
-          position="right"
-          target="_blank"
-        >
-          Fork me on GitHub
-        </GitHubForkRibbon>
-
         <div className={styles.wrapper}>
           <div className={styles.list}>
             <ul>
@@ -42,15 +34,6 @@ class Container extends Component {
           </div>
 
           <div className={styles.content}>
-            <div className={styles.header}>
-              <h1>{routeDef && routeDef.name} Example</h1>
-
-              <h2>
-                <a href="https://github.com/fullstackreact/google-maps-react/blob/master/README.md">
-                  Readme
-                </a>
-              </h2>
-            </div>
 
             <Switch>
               {routes.map(route => (

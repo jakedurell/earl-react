@@ -5,12 +5,56 @@ import Map from '../../src/index';
 import InfoWindow from '../../src/components/InfoWindow';
 import Marker from '../../src/components/Marker';
 
+const RideData = [
+  {
+      "Patient": "Rupert Bermejo",
+      "status": "picked up",
+      "id": 3,
+      "driver": "Alfred",
+      "currentLat": 44.312833,
+      "currentLng": -72.692843,
+      "available": "FALSE",
+      "img": "./images/alfred.jpg"
+  },
+  {
+      "Patient": "Matthew Lafountain",
+      "status": "booked",
+      "id": 5,
+      "driver": "Earl",
+      "currentLat": 44.630413,
+      "currentLng": -73.252439,
+      "available": "FALSE",
+      "img": "./images/earl.jpg"
+  },
+  {
+      "Patient": "Wilfredo Conlon",
+      "status": "dropped off",
+      "id": 2,
+      "driver": "Maverick",
+      "currentLat": 44.448977,
+      "currentLng": -73.157229,
+      "available": "TRUE",
+      "img": "./images/maverick.jpg"
+  },
+  {
+      "Patient": "Ashton Ritzman",
+      "status": "picked up",
+      "id": 4,
+      "driver": "Veronica",
+      "currentLat": 44.385431,
+      "currentLng": -73.141417,
+      "available": "FALSE",
+      "img": "./images/veronica.jpeg"
+  }
+]
+
 class WithMarkers extends Component {
   state = {
     activeMarker: {},
     selectedPlace: {},
-    showingInfoWindow: false
+    showingInfoWindow: false,
   };
+
 
   onMarkerClick = (props, marker) =>
     this.setState({
@@ -36,6 +80,16 @@ class WithMarkers extends Component {
   render() {
     if (!this.props.loaded) return <div>Loading...</div>;
 
+    const markerList = RideData.map((marker) => {
+      return (
+        <Marker
+          name={marker.driver}
+          position={{lat: this.currentLat, lng: this.currentLng}}
+          key={marker.id}
+        />
+      )
+    })
+
     return (
       <Map
         className="map"
@@ -43,6 +97,9 @@ class WithMarkers extends Component {
         onClick={this.onMapClicked}
         style={{ height: '100%', position: 'relative', width: '100%' }}
         zoom={14}>
+
+      {markerList}
+
         <Marker
           name="SOMA"
           onClick={this.onMarkerClick}
@@ -62,7 +119,7 @@ class WithMarkers extends Component {
           onClose={this.onInfoWindowClose}
           visible={this.state.showingInfoWindow}>
           <div>
-            <h1>{this.state.selectedPlace.name}</h1>
+            <h1>YO YO {this.state.selectedPlace.name}</h1>
           </div>
         </InfoWindow>
 
@@ -73,6 +130,8 @@ class WithMarkers extends Component {
         </InfoWindow>
       </Map>
     );
+
+
   }
 }
 
